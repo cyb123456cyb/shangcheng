@@ -10,27 +10,14 @@ Page({
     title:"我是标题",
     status:[],
     additional:[],
-     upload_photos: [],
+    upload_photos: [],
     upload_photos_uploaded: [],
     upload_photos_filename: [],
     upload_photos_progress: {},
     upload_pic_max_sum:4,
-    upload_video_max_duration: 60,
-    upload_video_min_duration: 3,
-    upload_pic_max_sum: 20,
-    upload_video_show_max_width: 260,
-    upload_video_show_width: 200,
-    upload_video_show_height: 200,
     pic_contents:[],
     pic_contents_updated:[],
     note_type:1,
-    upload_video_show:'',
-    upload_video_max_duration:60,
-    upload_video:null,
-    upload_video_width: null,
-    upload_video_height: null,
-    upload_video_duration:null,
-    upload_video_size: null
   },
 
   /**
@@ -70,87 +57,6 @@ Page({
     })
   },
   
-  bindVideoAdd: function (t) {
-
-    var e = this
-    wx.chooseVideo({
-      sourceType: ["album", "camera"],
-      maxDuration: 60,
-      compressed: true,
-      camera: ["back"], 
-      success: function (t) {
-        
-        if (console.log(t), t.duration > e.data.upload_video_max_duration || t.duration < e.data.upload_video_min_duration) wx.showModal({
-          title: "温馨提示",
-          content: "支持" + e.data.upload_video_min_duration + "~" + e.data.upload_video_max_duration + "秒",
-          confirmText: "我知道了",
-          showCancel: !1,
-          success: function (t) { }
-        }); else {
-          e.setData({
-            upload_video_show: t.tempFilePath
-          });
-          var o = e.data.upload_video_show_max_width;
-          t.width >= t.height ? e.setData({
-            upload_video_show_width: o,
-            upload_video_show_height: o * t.height / t.width
-          }) : e.setData({
-            upload_video_show_width: o * t.width / t.height,
-            upload_video_show_height: o
-          }), e.setData({
-            upload_video: t.tempFilePath,
-            upload_video_width: t.width,
-            upload_video_height: t.height,
-            upload_video_duration: t.duration,
-            upload_video_size: t.size
-          });
-        }
-      }
-    });
-  },
-  bindRemoveVideo:function (t) {
-    var e = this 
-    console.log(t), e.setData({
-      upload_video: "",
-      upload_video_show: ""
-    });
-  },
-  ViewImage(e) {
-    wx.previewImage({
-      urls: this.data.imgList,
-      current: e.currentTarget.dataset.url
-    });
-    console.log(this.data.imgList)
-  },
-
-  uploadVideo: function (e) {
-    console.log("我要开始上传视频了")
-    var that =this
-    wx.uploadFile({
-      //；路径需要修改
-      url: app.globalData.urls + "note/postVideo",
-      filePath: e.path,
-      name: "video",
-      // header: {
-      //   "User-Ticket": t.getUserTicket()
-      // },
-      formData: {
-        note_id: that.data.note_id,
-        sessionKey:app.globalData.usrId,
-
-      },
-      success:function(res){
-        console.log("我是视频上传返回的结果",res)
-        wx.hideLoading()
-        wx.navigateBack({
-          delta:1
-        })
-      },
-      fail:function(res){
-        console.log(res)
-      }
-    });
-  },
   DelImg(e) {
     wx.showModal({
       title: '记忆回收站',
@@ -176,23 +82,6 @@ Page({
     data.success = success
     console.log("我要上传的图片路径是",data.path)
     console.log("我是第",i)
-    //  wx.uploadFile({
-    //   url: app.globalData.urls+'note/postPic',
-    //    filePath: that.data.imgList[0],
-    //    name: 'pic',
-    //   formData: {
-    //     sessionKey:app.globalData.usrId,
-    //     note_id:that.data.note_id,
-    //     num:1
-    //   },
-    //   success:function(res){
-    //       console.log(res)
-    //   },
-    //   fail:function(res){
-    //     console.log(res)
-    //   }
-    //  })
-
     var fail=data.fail ? data.fail : 0;//上传失败的个数
     wx.uploadFile({
       url: app.globalData.urls+'note/postPic',
@@ -231,7 +120,6 @@ Page({
           })
         }
         console.log(i);
-        //这里可能有BUG，失败也会执行这里,所以这里应该是后台返回过来的状态码为成功时，这里的success才+1 
       },
       fail: (res) => {
         fail++;//图片上传失败，图片上传失败的变量+1
@@ -257,35 +145,11 @@ Page({
       }
     });
   },
-  ChooseImage() {
-    // wx.chooseImage({
-    //   count: 4, //默认9
-    //   sizeType: ['original', 'compressed'], //可以指定是原图还是压缩图，默认二者都有
-    //   sourceType: ['album'], //从相册选择
-    //   success: (res) => {
-    //     if (this.data.imgList.length != 0) {
-    //       console.log(res.tempFilePaths)
-    //       this.setData({
-    //         imgList: this.data.imgList.concat(res.tempFilePaths)
-    //       })
-    //     } else {
-    //       console.log(res.tempFilePaths)
-    //       this.setData({
-    //         imgList: res.tempFilePaths
-    //       })
-    //     }
-    //   }
-    // });
-
-
-
-
-
-    
+  ChooseImage() {   
   var that = this;
     wx.chooseImage({
             count: 1, //默认9
-      sizeType: [ 'compressed'], //可以指定是原图还是压缩图，默认二者都有
+      sizeType: [ 'compressed'], 
       sourceType: ['album', "camera"], //从相册选择
       success(res) {
         var d = that.data.imgList
@@ -372,7 +236,7 @@ Page({
     console.log(e)
     var that=this;
     wx.uploadFile({
-      url: 'http://47.97.219.21/addNote', //仅为示例，非真实的接口地址
+      url: 'http://47.97.219.21/addNote', 
       filePath: that.data.imgList[0],
       name: 'note_pic',
       formData: {
@@ -446,29 +310,12 @@ Page({
 
   },
 
-  // submitNoteCreate:function(res){
-  //   console.log(res)
-  // },
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
   },
-  // }, uploadPhoto: function (e) {
-  //   wx.uploadFile({
-  //     url: t.globalData.configs.api_url_prefix + "note_upload_pic",
-  //     filePath: e.path,
-  //     name: "file",
-  //     header: {
-  //       "User-Ticket": t.getUserTicket()
-  //     },
-  //     formData: {
-  //       note_id: e.note_id,
-  //       content: e.content
-  //     },
-  //     success: e.success
-  //   });
-  // },
+
   onPicContentInput:function(t){
     console.log("onPicContentInput", t);
     var e = t.currentTarget.dataset.index, o = t.detail.value, a = this.data.pic_contents;
