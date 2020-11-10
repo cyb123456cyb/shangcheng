@@ -1,6 +1,0 @@
-<cu-custom bgColor="bg-orange" isBack="{{true}}">
-  <view slot="backText">返回</view>
-  <view slot="content">关于</view>
-</cu-custom>
-<!-- <image style="width:100%" src="{{urls}}" ></image> -->
-<web-view src="{{urls}}"></web-view>

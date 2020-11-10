@@ -26,18 +26,8 @@
 			</view> -->
 		<!-- </view> -->
 	<!-- </view> -->
-            <view class="notevideocontent" wx:if="{{note_type=='2'}}">
-  <view bindtap="bindVideoAdd" class="selvideo" wx:if="{{upload_video_show==''}}">
-                    <!-- <text>点击添加视频</text> -->
-                    <view>点击添加视频</view>
-                </view>
-                <view class="seledvideo" style="width:{{upload_video_show_width}}px;height:{{upload_video_show_height}}px" wx:if="{{upload_video_show!=''}}">
-                    <video controls autoplay="{{false}}" src="{{upload_video_show}}" style="width:{{upload_video_show_width}}px;height:{{upload_video_show_height}}px">
-                        <cover-view bindtap="bindRemoveVideo">
-                            <cover-image src="/img/videodel.png"></cover-image>
-                        </cover-view>
-                    </video>
-                </view>
+          
+
 </view>
 
 
