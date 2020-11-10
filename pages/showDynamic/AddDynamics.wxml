@@ -24,17 +24,11 @@
 
 
 <scroll-view scroll-y="true" style="height:800px"> 
-
-             <view class="notetitle">
-                <input maxlength="40" name="title" placeholder="填写标题，让笔记更明确" placeholderClass="hover" type="text" style="margin-bottom:30rpx;" value="{{title}}"></input>
-              
-            </view>
             <view wx:if="{{note_type=='2'}}">
             <video controls autoplay="{{true}}" src="{{upload_video_show}}" style="width:{{winW}}px;">
                 </video>
               <view class="contents">{{note_content}}</view>
             </view>
-            <!-- 添加图片文字区域 -->
             <view class="notepiccontent" wx:if="{{note_type=='1'}}">
                
                 <view class="item" wx:for="{{res}}">
@@ -46,7 +40,6 @@
                             </view>
                         </view>
                         <view class="contents">{{item[1]}}</view>
-                            <!-- <textarea autoHeight bindinput="onPicContentInput" data-index="{{index}}" maxlength="5000" placeholderClass="hover" value="{{item[1]}}" ></textarea> -->
                         </view>
                     
                 </view>
@@ -57,7 +50,6 @@
             <view bindtap="likeNote" class="likecount {{state==1?'liked':''}}">
                 {{note_likes}}
             </view>
-            <button plain bindtap="showSharePic" class="btnsharepic">发朋友圈</button>
             <button plain class="btnshare" data-type="btm" openType="share">发微信</button>
         </view>
     </view>
@@ -67,30 +59,11 @@
        <button plain class="cmtfriend" data-type="cmt" id="__cmtfriend" bindtap="addNoteCmt">
             提交
         </button>
-        <view class="guidetips {{guide_cmt_show?'show':''}}">
-            <image lazyLoad mode="widthFix" src="{{global_configs.img_url_prefix}}wxapp/tips-pics/tip11.png"></image>
-        </view>
-    </view>
-     <view class="cmtempty" wx:if="{{comment_list.length==0}}">
-        <view class="emptytips">笔记暂无评论，快来抢沙发吧~</view>
+ 
     </view>
      <view class="cmtlist" wx:if="{{comment_list.length>0}}">
  <view class="cmtitem" wx:for="{{comment_list}}" wx:key="id">
-            <view bindtap="bindNoteCmtAction" data-cmt_id="{{item.id}}" data-parent_cmt_id="{{item.id}}" data-parent_reply_id="" data-user_id="{{item.user_id}}">
-                <!-- <view catchtap="gotoUserHome" class="uface" data-user_id="{{item.user_id}}"> -->
-                  
-                <!-- </view> -->
-              <view class="uface-box">
-                            <image lazyLoad class="facepic"  src="{{item.user_touxiang}}"></image>
-                    </view>
-                <view class="unick" >
-                    {{item.nickname}}
-                </view>
-                <view class="cmtcontent" >
-                    <view class="cmttext">
-                        <text>{{item.content}}</text>
-                    </view>
-                </view>
+            <view bindtap="bindNoteCmtAction" data-cmt_id="{{item.id}}" data-parent_cmt_id="{{item.id}}" data-parent_reply_id="" data-user_id="{{item.user_id}}">     
             </view>
         
         </view>
