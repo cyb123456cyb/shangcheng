@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "Test": "/components/dynamics/dynamics"
+  }
+}

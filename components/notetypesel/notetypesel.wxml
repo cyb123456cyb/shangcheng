@@ -1,0 +1,21 @@
+<view class="comm-notetypesel {{show_sel?'show':''}}">
+    <view class="layer-sel">
+        <view class="typesel">
+            <form reportSubmit bindsubmit="gotoNoteCreatePhoto">
+                <button plain class="item photo" formType="submit">
+                    <view class="iicon"></view>
+                    <view class="iname">发图片</view>
+                    <view class="itips">可以一次选多张</view>
+                </button>
+            </form>
+            <form reportSubmit bindsubmit="gotoNoteCreateVideo">
+                <button plain class="item video" formType="submit">
+                    <view class="iicon"></view>
+                    <view class="iname">发视频</view>
+                    <view class="itips">支持3～60秒</view>
+                </button>
+            </form>
+        </view>
+        <view bindtap="cancelSel" class="btncancel">取消</view>
+    </view>
+</view>

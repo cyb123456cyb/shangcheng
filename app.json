@@ -1,0 +1,65 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/myNote/myNote",
+    "pages/aboueDetail/aboutDetail",
+    "pages/home/index/index",
+    "pages/pingjia/pingjia",
+    "pages/modify/modify",
+    "pages/goods/details",
+    "pages/showDynamic/AddDyynamics",
+    "pages/showDynamic/AddDynamics",
+    "pages/AddDynamics/AddDynamics",
+    "pages/addPV/addPV",
+    "pages/getUserInfo/getUserInfo",
+    "pages/ceshi/ceshi",
+    "pages/dingdan/dingdan",
+    "pages/shop/goods/details",
+    "pages/verticalnav/verticalnav",
+    "pages/user/index/index",
+    "pages/dynamics/dynamics",
+    "pages/order/order",
+    "pages/AboutDetail"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#39b54a",
+    "navigationBarTitleText": "shop",
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#000",
+    "selectedColor": "#000",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "img/dynamic4.png",
+        "iconPath": "img/dynamic3.png",
+        "pagePath": "pages/index/index",
+        "text": "动态"
+      },
+      {
+        "selectedIconPath": "img/goodscar4.png",
+        "iconPath": "img/goodscar3.png",
+        "pagePath": "pages/verticalnav/verticalnav",
+        "text": "分类"
+      },
+      {
+        "selectedIconPath": "img/my3.png",
+        "iconPath": "img/my4.png",
+        "pagePath": "pages/user/index/index",
+        "text": "我的"
+      }
+    ]
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
+  },
+  "sitemapLocation": "sitemap.json",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "请确认授权"
+    }
+  }
+
+}

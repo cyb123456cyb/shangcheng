@@ -1,0 +1,111 @@
+<!-- 切换栏 -->
+<!-- <view class="swiper-tab">
+<block wx:for="{{swipertab}}" wx:key="sptab">
+<view class="swiper-tab-list {{currtab == item.index ? 'on' : ''}}" data-current="{{item.index}}" bindtap="tabSwitch">{{item.name}}</view>
+</block>
+</view> -->
+<cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">
+<!-- <view class="cu-custom" style="height:{{CustomBar}}px;"> -->
+<view slot="backText">返回</view>
+    <!-- <view class="cu-bar fixed none-bg text-white bg-img" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+        <view class="head-title canui-head-title">商品详情</view>
+    </view> -->
+    <view slot="content">我的订单</view>
+<!-- </view> -->
+</cu-custom>
+ <scroll-view scroll-x class=" nav text-center" style="background-image:linear-gradient(45deg, #ff9700, #ed1c24);color:white">
+  <view class="cu-item {{index==currtab?'text-white cur':''}}" wx:for="{{swipertab}}" wx:key bindtap="tabSwitch" data-id="{{index}}">
+    {{item.name}}
+  </view>
+</scroll-view>
+<swiper current="{{currtab}}" class="swiper-box" duration="300" style="height:{{deviceH-31}}px" bindchange="tabChange">
+<!-- 完成 -->
+<swiper-item>
+<scroll-view class="hot-box" scroll-y="true" style="height:500px">
+<view class="orderDetails" wx:for="{{pintuan}}" wx:if="{{item.pingtuan==0 || item.pingtuan_state==1}}">
+<view class="orderListTitle">
+<text class="userName">{{item.order_title}}</text>
+<text class="orderStatus">{{item.pintuan}}</text>
+</view>
+<view class="orderListDetails">
+<view class="productImg">
+<image src="{{item.course_pic1}}" background-size="cover"></image>
+</view>
+<view class="productInfo">
+<view class="productTitle">预定时间: {{item.order_time}}</view>
+<text class="productPrice">当前状态：{{item.pingtuan_state}}</text>
+
+</view>
+</view>
+<view class="productCount">
+<text>合计：￥{{item.order_price}}</text>
+
+ <view class='btn-group'>
+        <button class='cu-btn bg-orange round shadow-blur' style="margin-right:50px" bindtap="upToPJ" id="{{item.order_id}}" wx:if="{{item.hasComment==0}}">发起评价</button>
+        <view class='cu-btn bg-orange round shadow-blur' style="margin-right:50px"  wx:else>已评价</view>
+        <button class='cu-btn bg-red round shadow-blur' id="{{index}}" bindtap="backMoney">申请退款</button>
+
+    </view>
+</view>
+</view>
+</scroll-view>
+</swiper-item>
+<!-- 待付款 -->
+<!-- 拼团中 -->
+<swiper-item>
+<scroll-view class="hot-box" scroll-y="true" style="height:500px">
+<view class="orderDetails" wx:for="{{pintuan}}" wx:if="{{item.pingtuan==1 &&item.pingtuan_state==2}}">
+<view class="orderListTitle">
+<text class="userName">{{item.course_title}}</text>
+<text class="orderStatus">{{item.state}}</text>
+</view>
+<view class="orderListDetails">
+<view class="productImg">
+<image src="{{item.course_pic1}}" background-size="cover"></image>
+</view>
+<view class="productInfo">
+<view class="productTitle">预定时间: {{item.order_time}}</view>
+<text class="productPrice">当前状态：{{item.pintuan}}</text>
+</view>
+</view>
+
+<view class="productCount">
+<text>合计：￥{{item.order_price}}</text>
+
+ <view class='btn-group'>
+        <!-- <button class='cu-btn bg-orange round shadow-blur' style="margin-right:50px">发起评价</button>
+        <button class='cu-btn bg-red round shadow-blur' id="{{index}}" bindtap="backMoney">申请退款</button> -->
+                 <button class='cu-btn bg-red round shadow-blur' id="{{index}}" open-type="share" bindtap="Share">发起拼团</button>
+    </view>
+</view>
+</view>
+</scroll-view>
+</swiper-item>
+<!-- 取消 -->
+<swiper-item>
+<scroll-view class="hot-box" scroll-y="true">
+<view class="orderDetails" wx:for="{{lostOrder}}" wx:key=" ">
+<view class="orderListTitle">
+<text class="userName">{{item.name}}</text>
+<text class="orderStatus">{{item.state}}</text>
+</view>
+<view class="orderListDetails">
+<view class="productImg">
+<image src="{{item.url}}" background-size="cover"></image>
+</view>
+<view class="productInfo">
+<view class="productTitle">预定时间: {{item.time}}</view>
+<text class="productPrice">当前状态：{{item.status}}</text>
+</view>
+</view>
+<view class="productCount">
+<view>
+<text>合计：￥{{item.money}}</text>
+</view>
+</view>
+</view>
+</scroll-view>
+</swiper-item>
+ 
+</swiper>
+<!-- /pages/shop/goods?id=""&pintuan_id= -->

@@ -1,0 +1,239 @@
+.clear {
+    clear: both;
+    height: 0;
+    overflow: hidden;
+}
+
+.swiper-slide-center {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.font-white-shadow {
+    color: #fff;
+    text-shadow: 1px 1px 1px #999;
+}
+
+.img-circle {
+    border-radius: 50%;
+}
+
+@-webkit-keyframes larger {
+    0% {
+        transform: scale(0,0);
+    }
+
+    100% {
+        transform: scale(1,1);
+    }
+}
+
+@keyframes larger {
+    0% {
+        transform: scale(0,0);
+    }
+
+    100% {
+        transform: scale(1,1);
+    }
+}
+
+.comm-layer1 {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.7);
+    display: none;
+}
+
+.comm-layer1 .layer-view {
+    position: fixed;
+    z-index: 101;
+    top: 100px;
+    left: 30px;
+    right: 30px;
+    background-color: #fff;
+    border-radius: 4px;
+    display: none;
+    overflow: hidden;
+}
+
+.comm-layer1.show {
+    display: block;
+}
+
+.comm-layer1.show .layer-view {
+    display: block;
+    animation: larger .3s;
+}
+
+.comm-text1 {
+    font-size: 14px;
+    line-height: 20px;
+    color: #999;
+    text-align: center;
+}
+
+.comm-split1 {
+    height: 5px;
+    background-color: #eee;
+    margin: 20px 0 0 0;
+}
+
+.comm-btn1 {
+    height: 80rpx;
+    font-size: 30rpx;
+    line-height: 80rpx;
+    background-color: #FF1F5D;
+    color: #fff;
+    border-radius: 46rpx;
+    border: 0;
+    text-align: center;
+}
+
+.comm-btn2 {
+    height: 80rpx;
+    font-size: 30rpx;
+    line-height: 80rpx;
+    background-color: #FF1F5D;
+    color: #fff;
+    border-radius: 46rpx;
+    border: 0;
+    text-align: center;
+}
+
+.comm-wxlogin {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.7);
+    display: none;
+}
+
+.comm-wxlogin .layer-login {
+    position: fixed;
+    z-index: 101;
+    top: 300rpx;
+    left: 140rpx;
+    right: 140rpx;
+    background-color: #fff;
+    border-radius: 24rpx;
+    box-shadow: 0px 2px 24px 0px rgba(0,0,0,0.2);
+    display: none;
+    text-align: center;
+    padding: 0 0 39rpx 0;
+}
+
+.comm-wxlogin .layer-login .ufacebox {
+    margin: 0 auto;
+    margin-top: -62rpx;
+    width: 223rpx;
+    height: 125rpx;
+    background: url("http://m.jiazhangbiji.cn/images/wxapp/facebg@3x.png") 0 0 no-repeat;
+    background-size: 223rpx 125rpx;
+    text-align: center;
+}
+
+.comm-wxlogin .layer-login .ufacebox .uface {
+    display: inline-block;
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+.comm-wxlogin .layer-login .ufacebox .uface .picface {
+    border-radius: 50%;
+    display: block;
+    width: 120rpx;
+    height: 120rpx;
+}
+
+.comm-wxlogin .layer-login .title1 {
+    margin: 36rpx 0 0 0;
+    font-size: 32rpx;
+    line-height: 45rpx;
+    color: #000;
+}
+
+.comm-wxlogin .layer-login .unick {
+    font-size: 32rpx;
+    line-height: 45rpx;
+    color: #000;
+}
+
+.comm-wxlogin .layer-login .text1 {
+    margin: 36rpx 0 0 0;
+}
+
+.comm-wxlogin .layer-login .text1 .textline {
+    font-size: 24rpx;
+    line-height: 33rpx;
+    color: #666666;
+}
+
+.comm-wxlogin .layer-login .actions {
+    margin: 47rpx 0 0 0;
+}
+
+.comm-wxlogin .layer-login .actions .btn-login {
+    display: inline-block;
+    height: 72rpx;
+    padding: 0 66rpx;
+    color: #000;
+    background-color: #FFEF16;
+    border-radius: 36rpx;
+    font-size: 32rpx;
+    line-height: 72rpx;
+    border: 0;
+}
+
+.comm-wxlogin .layer-login .text2 {
+    margin: 26rpx 0 0 0;
+    text-align: center;
+    height: 37rpx;
+}
+
+.comm-wxlogin .layer-login .text2 .txt1 {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 25rpx;
+    line-height: 37rpx;
+    color: #999;
+}
+
+.comm-wxlogin .layer-login .text2 .txt2 {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 0 0 10rpx;
+    font-size: 30rpx;
+    line-height: 37rpx;
+    color: #FF5B15;
+    background: url("http://m.jiazhangbiji.cn/images/wxapp/point/egg-small.png") 0 5rpx no-repeat;
+    background-size: 22rpx auto;
+    padding: 0 0 0 30rpx;
+}
+
+.comm-wxlogin.show {
+    display: block;
+}
+
+.comm-wxlogin.show .layer-login {
+    display: block;
+    animation: larger .3s;
+}

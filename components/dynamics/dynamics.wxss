@@ -1,0 +1,47 @@
+/* pages/components/dynamics.wxss */
+.text{
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap
+}
+.imgANameALoves{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between
+}
+Images{
+  flex: 1;
+}
+.InnerImage{
+  width: 40rpx;
+  height:40rpx;
+  border-radius: 20rpx;
+
+}
+.textName{
+  flex:4;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.Outter{
+  margin-bottom: 10px;
+  margin-left: 10px;
+  box-shadow: 0rpx 5rpx 10rpx 10rpx rgba(150,150,150, 0.40);
+  overflow: hidden;
+  background-color: white;
+  border-radius: 10px;
+}
+.text{
+  height: 30px;
+}
+.Likes{
+  flex: 2;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.Images{
+    width: 50rpx;
+    height:50rpx;
+}

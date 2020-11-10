@@ -1,0 +1,178 @@
+.clear {
+    clear: both;
+    height: 0;
+    overflow: hidden;
+}
+
+.swiper-slide-center {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.font-white-shadow {
+    color: #fff;
+    text-shadow: 1px 1px 1px #999;
+}
+
+.img-circle {
+    border-radius: 50%;
+}
+
+@-webkit-keyframes larger {
+    0% {
+        transform: scale(0,0);
+    }
+
+    100% {
+        transform: scale(1,1);
+    }
+}
+
+@keyframes larger {
+    0% {
+        transform: scale(0,0);
+    }
+
+    100% {
+        transform: scale(1,1);
+    }
+}
+
+.comm-layer1 {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.7);
+    display: none;
+}
+
+.comm-layer1 .layer-view {
+    position: fixed;
+    z-index: 101;
+    top: 100px;
+    left: 30px;
+    right: 30px;
+    background-color: #fff;
+    border-radius: 4px;
+    display: none;
+    overflow: hidden;
+}
+
+.comm-layer1.show {
+    display: block;
+}
+
+.comm-layer1.show .layer-view {
+    display: block;
+    animation: larger .3s;
+}
+
+.comm-text1 {
+    font-size: 14px;
+    line-height: 20px;
+    color: #999;
+    text-align: center;
+}
+
+.comm-split1 {
+    height: 5px;
+    background-color: #eee;
+    margin: 20px 0 0 0;
+}
+
+.comm-btn1 {
+    height: 80rpx;
+    font-size: 30rpx;
+    line-height: 80rpx;
+    background-color: #FF1F5D;
+    color: #fff;
+    border-radius: 46rpx;
+    border: 0;
+    text-align: center;
+}
+
+.comm-btn2 {
+    height: 80rpx;
+    font-size: 30rpx;
+    line-height: 80rpx;
+    background-color: #FF1F5D;
+    color: #fff;
+    border-radius: 46rpx;
+    border: 0;
+    text-align: center;
+}
+
+.comm-sharepic {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.4);
+    display: none;
+}
+
+.comm-sharepic .layer-pic {
+    position: fixed;
+    z-index: 101;
+    top: 260rpx;
+    left: 12%;
+    right: 12%;
+    display: none;
+}
+
+.comm-sharepic .layer-pic .picbox {
+    width: 100%;
+}
+
+.comm-sharepic .layer-pic .picbox image {
+    width: 100%;
+    display: block;
+}
+
+.comm-sharepic .layer-pic .tips1 {
+    margin: 30rpx 0 0 0;
+    text-align: center;
+    font-size: 30rpx;
+    line-height: 42rpx;
+    color: #fff;
+}
+
+.comm-sharepic .layer-pic .picactions {
+    margin: 20rpx 0 0 0;
+    text-align: center;
+}
+
+.comm-sharepic .layer-pic .picactions .btn-download {
+    display: inline-block;
+    padding: 0 39rpx 0 84rpx;
+    height: 72rpx;
+    font-size: 26rpx;
+    line-height: 72rpx;
+    background: url("http://m.jiazhangbiji.cn/images/wxapp/download@3x.png") 36rpx 19rpx no-repeat;
+    background-size: 33rpx auto;
+    background-color: #FFEF16;
+    border: 0;
+    border-radius: 36rpx;
+}
+
+.comm-sharepic.show {
+    display: block;
+}
+
+.comm-sharepic.show .layer-pic {
+    display: block;
+    animation: larger .3s;
+}

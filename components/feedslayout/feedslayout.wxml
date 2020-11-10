@@ -1,0 +1,12 @@
+<import src="/templates/feeds_item.wxml"></import>
+<import src="/templates/feeds_item.wxml"></import>
+<view>
+    <view class="feedscontainer">
+        <view class="feeds-l" id="__feeds_l">
+            <template is="feeds-item" data="{{feed_pic_width:feed_pic_width,feed_list:feed_list_l,notes_liked:notes_liked,notes_like_add:notes_like_add,su_seled_note_id:su_seled_note_id,hide_nodes:hide_nodes,topic_hot_notes:topic_hot_notes,global_configs:global_configs}}"></template>
+        </view>
+        <view class="feeds-r" id="__feeds_r">
+            <template is="feeds-item" data="{{feed_pic_width:feed_pic_width,feed_list:feed_list_r,notes_liked:notes_liked,notes_like_add:notes_like_add,su_seled_note_id:su_seled_note_id,hide_nodes:hide_nodes,topic_hot_notes:topic_hot_notes,global_configs:global_configs}}"></template>
+        </view>
+    </view>
+</view>

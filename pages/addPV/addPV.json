@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "component-topbar": "../../components/topbar/topbar",
+    "component-wxlogin": "../../components/wxlogin/wxlogin",
+    "component-notetypesel": "../../components/notetypesel/notetypesel",
+    "component-feeds": "../../components/feedslayout/feedslayout",
+    "component-sharepic": "../../components/sharepic/sharepic",
+    "component-guidetips": "../../components/guidetips/guidetips",
+    "component-pointchange": "../../components/pointchange/pointchange"
+  }
+}

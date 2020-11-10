@@ -1,0 +1,8 @@
+<cu-custom bgColor="bg-orange" isBack="{{true}}">
+<view slot="backText">返回</view>
+
+    <view slot="content">请允许获取个人头像等信息</view>
+<!-- </view> -->
+
+</cu-custom>
+<button open-type="getUserInfo" lang='zh_CN' bindgetuserinfo ='getUserInfo'>授权获取头像昵称</button>

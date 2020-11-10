@@ -1,0 +1,5 @@
+<view class="comm-guidetips {{show_guide?'show':''}}">
+    <view class="layer-guide {{guide_type}}" style="{{guide_top>0?'top:'+guide_top+'px;':''}}{{guide_bottom>0?'bottom:'+guide_bottom+'px;':''}}">
+        <image mode="widthFix" src="{{tips_pic_url}}"></image>
+    </view>
+</view>

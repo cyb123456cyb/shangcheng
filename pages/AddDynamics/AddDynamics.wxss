@@ -1,0 +1,295 @@
+/* pages/AddDynamics/AddDynamics.wxss */
+.UpperBar{
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+}
+.back{
+  width:40rpx;
+  height:40rpx;
+}
+.line{
+  width: 100%;
+  height: 3rpx;
+  background: rgba(200, 200, 200, 0.5);
+}
+.submit{
+  background:rgb(4, 187, 4);
+  color: white;
+  padding: 5rpx 24rpx 5rpx 24rpx;
+  margin: 8rpx ;
+  height:60rpx;
+  line-height: 60rpx;
+}
+.cu-form-group .title {
+  min-width: calc(4em + 30rpx);
+}
+.whiteBac{
+  background:white;
+   padding: 0rpx 20rpx 40rpx 20rpx;
+}
+.btn-submit {
+    height: 80rpx;
+    font-size: 30rpx;
+    line-height: 80rpx;
+    background-color: #FF1F5D;
+    color: #fff;
+    border-radius: 46rpx;
+    border: 0;
+    text-align: center;
+    margin: 0 95rpx;
+}
+ .formsubmit {
+      margin: 300rpx 0 0 0;
+      text-align: center;
+  }
+  .notetitle {
+    margin: 0 30rpx;
+    height: 90rpx;
+    border-bottom: 1px solid #EDEDED;
+    position: relative;
+    padding: 50rpx 0 0 0;
+    margin-bottom: 20rpx;
+}
+.notetitle .tips {
+    position: absolute;
+    top: 60rpx;
+    right: 0;
+    z-index: 10;
+    font-size: 24rpx;
+    line-height: 33rpx;
+    color: #999;
+}
+.notetitle .hover {
+    color: #ccc;
+}
+.notetitle input {
+    margin: 0 100rpx 0 0;
+    border: 0;
+    background-color: #fff;
+    height: 50rpx;
+    font-size: 32rpx;
+}
+
+ .notetext {
+    background-color: #F6F6F6;
+    padding: 30rpx 20rpx 60rpx;
+    position: relative;
+}
+.notetext textarea {
+    width: 100%;
+    border: 0;
+    min-height: 80rpx;
+    font-size: 30rpx;
+}
+ .notetext .tips {
+    position: absolute;
+    right: 10rpx;
+    bottom: 20rpx;
+    font-size: 24rpx;
+    line-height: 30rpx;
+    color: #999;
+}
+.notetext {
+    background-color: #F6F6F6;
+    padding: 30rpx 20rpx 60rpx;
+    position: relative;
+}
+
+
+
+.content .right {
+  width: 100%;
+  font-size: 24rpx;
+  float: left;
+  color: #888;
+}
+
+.content .right text {
+  font-size: 24rpx;
+  padding: 13rpx 24rpx;
+  float: left;
+  border: 1px solid #888;
+  border-radius: 10rpx;
+  margin-right: 34rpx;
+  margin-top: 20rpx;
+}
+
+.labelColor {
+  color: #c00;
+  border: 1px solid #c00 !important;
+}
+.right{
+  
+}
+.notevideocontent {
+    margin: 0 30rpx;
+    padding: 30rpx 0 40rpx 0;
+}
+.notevideocontent .selvideo {
+    width: 160rpx;
+    height: 120rpx;
+    padding: 15rpx 10rpx;
+    border-radius: 12rpx;
+    background-color: #FFF3F6;
+    border: 2px dotted #ff1f5d;
+    font-size: 28rpx;
+    line-height: 40rpx;
+    color: #FF1F5D;
+    text-align: center;
+}
+ .notevideocontent .seledvideo {
+    width: 200px;
+    position: relative;
+}
+.notevideocontent .seledvideo video {
+    width: 100%;
+}
+.notevideocontent .seledvideo cover-view {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    height: 20px;
+    width: 20px;
+}
+.notevideocontent .seledvideo cover-view cover-image {
+    height: 20px;
+    width: 20px;
+}
+.notevideocontent textarea {
+    margin: 30rpx 0 0 0;
+    width: 100%;
+    border: 0;
+    min-height: 80rpx;
+    font-size: 30rpx;
+}
+/* .selvideo {
+    width: 120rpx;
+    height: 80rpx;
+    padding: 60rpx 40rpx;
+    border-radius: 12rpx;
+    background-color: #FFF3F6;
+    border: 2px dotted #ff1f5d;
+    font-size: 28rpx;
+    line-height: 20rpx;
+    color: #FF1F5D;
+    text-align: center;
+    /* text-align: left; 
+} */
+.notevideocontent .seledvideo {
+    width: 200px;
+    position: relative;
+}
+.notevideocontent {
+    margin: 0 30rpx;
+    padding: 30rpx 0 40rpx 0;
+}
+
+.notetitle {
+    margin: 0 30rpx;
+    height: 90rpx;
+    border-bottom: 1px solid #EDEDED;
+    position: relative;
+    padding: 50rpx 0 0 0;
+}
+
+ .notetitle input {
+    margin: 0 100rpx 0 0;
+    border: 0;
+    background-color: #fff;
+    height: 50rpx;
+    font-size: 32rpx;
+}
+.notetitle .hover {
+    color: #ccc;
+}
+ .notetitle .tips {
+    position: absolute;
+    top: 60rpx;
+    right: 0;
+    z-index: 10;
+    font-size: 24rpx;
+    line-height: 33rpx;
+    color: #999;
+}
+ .notepiccontent {
+    margin: 0 30rpx;
+    padding: 0 0 40rpx 0;
+}
+
+.notepiccontent .picadd {
+    margin: 40rpx 0 0 0;
+    text-align: center;
+}
+ .notepiccontent .picadd .btnadd {
+    display: inline-block;
+    height: 76rpx;
+    border-radius: 38rpx;
+    color: #FF1F5D;
+    font-size: 30rpx;
+    line-height: 76rpx;
+    padding: 0 32rpx 0 92rpx;
+    background: url("http://m.jiazhangbiji.cn/images/wxapp/notepic-insert.png") 32rpx 15rpx no-repeat;
+    background-size: 46rpx auto;
+    background-color: #FFF3F6;
+}
+
+.notepiccontent .item {
+    margin: 40rpx 0 0 0;
+}
+.notepiccontent .item .pictext {
+    border-radius: 12rpx;
+}
+.notepiccontent .item .pictext .notepic {
+    position: relative;
+}
+
+ .notepiccontent .item .pictext .notepic image {
+    width: 100%;
+    display: block;
+}
+.notepiccontent .item .pictext .notepic .noteactions {
+    position: absolute;
+    top: 30rpx;
+    left: 20rpx;
+}
+.notepiccontent .item .pictext .notepic .noteactions .pic-btn {
+    width: 70rpx;
+    height: 70rpx;
+    margin: 0 20rpx 0 0;
+    display: inline-block;
+}
+ .notepiccontent .item .pictext .notepic .noteactions .pic-btn.pic-del {
+    background: url("http://m.jiazhangbiji.cn/images/wxapp/notepic-del.png") 0 0 no-repeat;
+    background-size: 70rpx 70rpx;
+}
+
+.notepiccontent .item .pictext .notepic .noteactions .pic-btn.pic-replace {
+    background: url("http://m.jiazhangbiji.cn/images/wxapp/notepic-replace.png") 0 0 no-repeat;
+    background-size: 70rpx 70rpx;
+}
+
+.notepiccontent .item .pictext .notetext {
+    background-color: #F6F6F6;
+    padding: 30rpx 20rpx 60rpx;
+    position: relative;
+}
+.notepiccontent .item .pictext .notetext textarea {
+    width: 100%;
+    border: 0;
+    min-height: 80rpx;
+    font-size: 30rpx;
+}
+.notepiccontent .item .pictext .notetext .hover {
+    color: #ccc;
+}
+ .notepiccontent .item .pictext .notetext .tips {
+    position: absolute;
+    right: 10rpx;
+    bottom: 10rpx;
+    font-size: 24rpx;
+    line-height: 30rpx;
+    color: #999;
+}
+

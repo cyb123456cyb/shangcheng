@@ -1,0 +1,155 @@
+
+<view class="cu-custom" style="height:{{CustomBar}}px;">
+    <view class="cu-bar fixed none-bg text-white bg-img" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+        <view class="head-title canui-head-title">评价</view>
+    </view>
+</view>
+
+<view class="service">
+  <!--评分-->
+  <view class='score'>
+    <view class='left'>
+      课程内容
+    </view>
+    <view class='right'>
+       <view bindtap="starTap" data-index="{{index}}" data-level="{{0}}" class="star" wx:for="{{userStars[wjxScore[0]-1]}}" wx:key="index">
+        <image src="{{item}}"></image>
+      </view>
+      <text class='rtxt'>{{wjxScore[0]}}.0分</text>
+    </view>
+  </view>
+  <view class='score'>
+    <view class='left'>
+      课程氛围
+    </view>
+    <view class='right'>
+       <view bindtap="starTap" data-index="{{index}}"  data-level="{{1}}" class="star" wx:for="{{userStars[wjxScore[1]-1]}}" wx:key="index">
+        <image src="{{item}}"></image>
+      </view>
+      <text class='rtxt'>{{wjxScore[1]}}.0分</text>
+    </view>
+  </view>
+  
+  <view class='score'>
+    <view class='left'>
+      课程节奏和课件设计
+    </view>
+    <view class='right'>
+       <view bindtap="starTap" data-index="{{index}}"  data-level="{{2}}" class="star" wx:for="{{userStars[wjxScore[2]-1]}}" wx:key="index">
+        <image src="{{item}}"></image>
+      </view>
+      <text class='rtxt'>{{wjxScore[2]}}.0分</text>
+    </view>
+  </view>
+    <view class='score'>
+    <view class='left'>
+     仪表及面貌
+    </view>
+    <view class='right'>
+       <view bindtap="starTap" data-index="{{index}}"  data-level="{{3}}" class="star" wx:for="{{userStars[wjxScore[3]-1]}}" wx:key="index">
+        <image src="{{item}}"></image>
+      </view>
+      <text class='rtxt'>{{wjxScore[3]}}.0分</text>
+    </view>
+  </view>
+      <view class='score'>
+    <view class='left'>
+     交流互动环节设计
+    </view>
+    <view class='right'>
+       <view bindtap="starTap" data-index="{{index}}"  data-level="{{4}}" class="star" wx:for="{{userStars[wjxScore[4]-1]}}" wx:key="index">
+        <image src="{{item}}"></image>
+      </view>
+      <text class='rtxt'>{{wjxScore[4]}}.0分</text>
+    </view>
+  </view>
+      <view class='score'>
+    <view class='left'>
+     专业知识满意度
+    </view>
+    <view class='right'>
+       <view bindtap="starTap" data-index="{{index}}"  data-level="{{5}}" class="star" wx:for="{{userStars[wjxScore[5]-1]}}" wx:key="index">
+        <image src="{{item}}"></image>
+      </view>
+      <text class='rtxt'>{{wjxScore[5]}}.0分</text>
+    </view>
+  </view>
+
+        <view class='score'>
+    <view class='left'>
+     授课技巧满意度
+    </view>
+    <view class='right'>
+       <view bindtap="starTap" data-index="{{index}}"  data-level="{{6}}" class="star" wx:for="{{userStars[wjxScore[6]-1]}}" wx:key="index">
+        <image src="{{item}}"></image>
+      </view>
+      <text class='rtxt'>{{wjxScore[6]}}.0分</text>
+    </view>
+  </view>
+        <view class='score'>
+    <view class='left'>
+     理论结合案例满意度
+    </view>
+    <view class='right'>
+       <view bindtap="starTap" data-index="{{index}}"  data-level="{{7}}" class="star" wx:for="{{userStars[wjxScore[7]-1]}}" wx:key="index">
+        <image src="{{item}}"></image>
+      </view>
+      <text class='rtxt'>{{wjxScore[7]}}.0分</text>
+    </view>
+  </view>
+        <view class='score'>
+    <view class='left'>
+     培训组织安排
+    </view>
+    <view class='right'>
+       <view bindtap="starTap" data-index="{{index}}"  data-level="{{8}}" class="star" wx:for="{{userStars[wjxScore[8]-1]}}" wx:key="index">
+        <image src="{{item}}"></image>
+      </view>
+      <text class='rtxt'>{{wjxScore[8]}}.0分</text>
+    </view>
+  </view>
+        <view class='score'>
+    <view class='left'>
+     工作人员满意度
+    </view>
+    <view class='right'>
+       <view bindtap="starTap" data-index="{{index}}"  data-level="{{9}}" class="star" wx:for="{{userStars[wjxScore[9]-1]}}" wx:key="index">
+        <image src="{{item}}"></image>
+      </view>
+      <text class='rtxt'>{{wjxScore[9]}}.0分</text>
+    </view>
+  </view>
+  <!--内容-->
+  <view class='content'>
+    <view class='left'>
+      内容
+    </view>
+    <view class='right'>
+      <text bindtap='label' class="{{attitude===true ? 'labelColor':''}}" data-index="{{attitude}}">老师很棒</text>
+      <text bindtap='label1' class="{{time===false? 'labelColor':''}}" data-index="{{time}}">课程很有意义</text>
+      <text bindtap='label2' class="{{efficiency===false?'labelColor':''}}" data-index="{{efficiency}}">很有效果</text>
+      <text bindtap='label3' class="{{environment===false?'labelColor':''}}" data-index="{{environment}}">值得收藏</text>
+      <text bindtap='label4' class="{{professional===false?'labelColor':''}}" data-index="{{professional}}">点赞课程</text> 
+    </view>
+  </view>
+  <!--图片-->
+  <!-- <view class='picture'>
+    <view class='left'>
+      图片
+    </view>
+    <view class='right'>
+       <view class="parcel" wx:for="{{pics}}" wx:key="{{index}}">
+       <image src="{{pics[index]}}" class="According" data-index="{{index}}" mode="aspectFill" bindtap="previewImg"></image>
+       </view>
+      <image src='../img/add.png' class='add' bindtap='choose'></image>
+    </view>
+  </view> -->
+</view>
+<!--textarea-->
+<view class="conts">
+    <textarea class="areas" placeholder='更多评价请写在这里（最多300字）' minlength="{{min}}" maxlength="{{max}}" bindinput="inputs"> 
+        <!-- <text class="currentWordNumber">{{currentWordNumber|0}}/{{max}}</text> -->
+    </textarea>
+</view>
+<!--提交评价-->
+<button class='btn' bindtap='handleBtn' style="z-index:100">提交评价</button>

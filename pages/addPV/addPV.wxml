@@ -1,0 +1,90 @@
+<view class="notecreate">
+    <component-topbar back back_confirm home back_confirm_content="你的笔记还没发布，确定退出吗？" back_confirm_text_cancel="不退出" back_confirm_text_confirm="退出" title=""></component-topbar>
+    <view class="noteform" wx:if="{{!note_create_succ}}">
+        <form reportSubmit bindsubmit="submitNoteCreate">
+            <view class="notetitle">
+                <input maxlength="40" name="title" placeholder="填写标题，让笔记更明确" placeholderClass="hover" type="text" value="{{edit_note_info.note.title}}"></input>
+                <view class="tips">20字</view>
+            </view>
+            <view class="notepiccontent" wx:if="{{note_type=='1'}}">
+                <view class="picadd">
+                    <view bindtap="bindPhotoAdd" class="btnadd" data-index="0">添加图文</view>
+                </view>
+                <view class="item" wx:for="{{upload_photos}}">
+                    <view class="pictext">
+                        <view class="notepic">
+                            <image mode="widthFix" src="{{item}}"></image>
+                            <view class="noteactions">
+                                <view bindtap="bindRemovePhoto" class="pic-btn pic-del" data-index="{{index}}"></view>
+                                <view bindtap="bindPhotoChange" class="pic-btn pic-replace" data-index="{{index}}"></view>
+                            </view>
+                        </view>
+                        <view class="notetext">
+                            <textarea autoHeight bindinput="onPicContentInput" data-index="{{index}}" maxlength="5000" placeholder="有图有真相，有字有细节！多写点哦…" placeholderClass="hover" value="{{pic_contents[index]?pic_contents[index]:''}}"></textarea>
+                            <view class="tips">5000字</view>
+                        </view>
+                    </view>
+                    <view class="picadd">
+                        <view bindtap="bindPhotoAdd" class="btnadd" data-index="{{index+1}}">
+                            添加图文
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="notevideocontent" wx:elif="{{note_type=='2'}}">
+                <view bindtap="bindVideoAdd" class="selvideo" wx:if="{{upload_video_show==''}}">
+                    点击添加视频
+                </view>
+                <view class="seledvideo" style="width:{{upload_video_show_width}}px;height:{{upload_video_show_height}}px" wx:if="{{upload_video_show!=''}}">
+                    <video controls autoplay="{{false}}" src="{{upload_video_show}}" style="width:{{upload_video_show_width}}px;height:{{upload_video_show_height}}px">
+                        <cover-view bindtap="bindRemoveVideo">
+                            <cover-image src="{{global_configs.img_url_prefix}}wxapp/videodel@3x.png"></cover-image>
+                        </cover-view>
+                    </video>
+                </view>
+                <view hidden="{{upload_video_show==''}}">
+                    <textarea maxlength="1000" name="content" placeholder="为你的视频添加描述吧～" value="{{edit_note_info.note.content}}"></textarea>
+                    <view class="tips">1000字</view>
+                </view>
+            </view>
+            <block wx:if="{{edit_note_id==''}}">
+                <view class="fromtopic" hidden="{{upload_photos.length==0&&upload_video_show==''}}" wx:if="{{topic_id!=''&&task_id!=''}}">
+                    <view class="fttimes">{{user_task_status.sign_next_days}}</view>
+                    <view class="fttitle">{{topic_info.topic.title}}</view>
+                </view>
+            </block>
+            <block wx:else>
+                <view class="fromtopic" wx:if="{{edit_note_info.note.from_task_info}}">
+                    <view class="fttimes">{{edit_note_info.note.task_sign_days}}</view>
+                    <view class="fttitle">{{edit_note_info.note.from_topic_info.title}}</view>
+                </view>
+            </block>
+            <view class="reltopics" hidden="{{upload_photos.length==0&&upload_video_show==''}}">
+                <view bindtap="gotoRelTopicSel" class="rtname">关联话题</view>
+                <view bindtap="gotoRelTopicSel" class="rtarrow"></view>
+                <view class="rtitems" wx:if="{{rel_topics.length>0}}">
+                    <view class="titem" wx:for="{{rel_topics}}">
+                        {{item.title}}
+                        <view bindtap="removeRelTopic" class="tremove" data-index="{{index}}"></view>
+                    </view>
+                </view>
+            </view>
+            <view class="relchildren" hidden="{{upload_photos.length==0&&upload_video_show==''}}">
+                <view class="rctitle">参与的宝贝</view>
+                <view bindtap="gotoChildCreate" class="rcadd">+ 宝贝</view>
+                <view class="rcitems">
+                    <view bindtap="selChildren" class="rcitem gender-{{item.gender}} {{my_children_seled[item.id]?'seled':''}}" data-id="{{item.id}}" wx:for="{{my_children}}">
+                        <image class="rcface" src="{{item.pic_r300}}"></image>
+                        <view class="rcname">{{item.nick}}·{{item.age}}</view>
+                    </view>
+                </view>
+            </view>
+            <view class="formsubmit" hidden="{{upload_photos.length==0&&upload_video_show==''}}">
+                <button class="btn-submit" disabled="{{form_submit_loading}}" formType="submit" hoverClass="loading" load="{{form_submit_loading}}" wx:if="{{!note_create_succ}}">
+                    {{form_submit_loading?'正在提交，请稍候...':'确认发布'}}
+                </button>
+            </view>
+        </form>
+    </view>
+    <component-pointchange class="component-pointchange"></component-pointchange>
+</view>

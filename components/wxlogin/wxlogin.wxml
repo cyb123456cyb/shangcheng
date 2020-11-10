@@ -1,0 +1,26 @@
+<view bindtap="tapLayerBg" class="comm-wxlogin {{show_login?'show':''}}">
+    <view class="layer-login">
+        <view class="ufacebox">
+            <view class="uface">
+                <open-data class="picface" type="userAvatarUrl"></open-data>
+            </view>
+        </view>
+        <view class="title1">等你好久啦</view>
+        <view class="unick">
+            <open-data type="userNickName"></open-data>
+        </view>
+        <view class="text1">
+            <view class="textline">登录家长笔记</view>
+            <view class="textline">才能继续这个功能哦～</view>
+        </view>
+        <view class="actions">
+            <button catchgetuserinfo="bindGetUserInfo" class="btn-login" openType="getUserInfo" plain="{{true}}">
+                微信登录
+            </button>
+        </view>
+        <view class="text2">
+            <view class="txt1">登录就送</view>
+            <view class="txt2">100</view>
+        </view>
+    </view>
+</view>

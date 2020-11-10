@@ -1,0 +1,66 @@
+<cu-custom bgColor="bg-orange" isBack="{{true}}">
+  <view slot="content">动态推荐</view>
+</cu-custom>
+<AddVI show_sel="{{show_sel}}" ></AddVI>
+<scroll-view scroll-x class="bg-white nav">
+  <view class="flex text-center">
+    <view class="cu-item flex-sub {{index==TabCur?'text-orange cur':''}}" wx:for="{{Tabs}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+      {{Tabs[index]}}
+    </view>
+  </view>
+
+</scroll-view>
+
+<view style="display:none">
+<image  wx:for="{{images}}" wx:key="id" id="{{item.id}}"  src="{{item.pic}}" bindload="onImageLoad"></image>
+</view>
+<view style="display:none">
+<image  wx:for="{{images2}}" wx:key="id" id="{{item.id}}"  src="{{item.pic}}" bindload="onImageLoad2"></image>
+</view>
+
+  <swiper current="{{TabCur}} " indicator-dots="{{false}}" style="height:{{wh}}px"
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange="ChangeTab">
+  <swiper-item>
+  
+<scroll-view scroll-y="true" style="height:{{scrollH-40}}px" bindscrolltolower="loadImages">
+<view style="width:100%">
+<view class="img_item">
+<view wx:for="{{col1}}" wx:key="id" id="{{item.id}}"  >
+<!-- <image src="{{item.pic}}" style="width:100%;height:{{item.height}}px"></image> -->
+<Test Image="{{totalImg[item.id].user_touxiang}}" bindpopViewDismissEvent="test" id="{{item.id}}" Height="{{item.height}}" title="{{totalImg[item.id].note_title}}" imgPath="{{item.pic}}"  Name="{{totalImg[item.id].nickname}}" Counting="100"/>
+</view>
+</view>
+<view class="img_item">
+<view wx:for="{{col2}}" wx:key="id" id="{{item.id}}">
+<!-- <image src="{{item.pic}}" style="width:100%;height:{{item.height}}px"></image> -->
+<Test Image="{{totalImg[item.id].user_touxiang}}" title="{{totalImg[item.id].note_title}}" bindpopViewDismissEvent="test" id="{{item.id}}" Height="{{item.height}}" imgPath="{{item.pic}}"  Name="{{totalImg[item.id].nickname}}" Counting="100"/>
+</view>
+</view>
+</view>
+</scroll-view>
+</swiper-item>
+
+  <swiper-item>
+<scroll-view scroll-y="true" style="height:{{scrollH}}px" bindscrolltolower="loadImages2">
+<view style="width:100%">
+<view class="img_item">
+<view wx:for="{{col3}}" wx:key="id" id="{{item.id}}"  >
+<!-- <image src="{{item.pic}}" style="width:100%;height:{{item.height}}px"></image> -->
+<Test Image="{{totalImg2[item.id].user_touxiang}}" bindpopViewDismissEvent="ClickItem2" id="{{item.id}}" Height="{{item.height}}" title="{{totalImg2[item.id].note_title}}" imgPath="{{item.pic}}"  Name="{{totalImg2[item.id].nickname}}" Counting="100"/>
+</view>
+</view>
+<view class="img_item">
+<view wx:for="{{col4}}" wx:key="id" id="{{item.id}}">
+<!-- <image src="{{item.pic}}" style="width:100%;height:{{item.height}}px"></image> -->
+<Test Image="{{totalImg2[item.id].user_touxiang}}"  title="{{totalImg2[item.id].note_title}}" bindpopViewDismissEvent="ClickItem2" id="{{item.id}}" Height="{{item.height}}" imgPath="{{item.pic}}"  Name="{{totalImg2[item.id].nickname}}" Counting="100"/>
+</view>
+</view>
+</view>
+</scroll-view>
+</swiper-item>
+
+
+</swiper>
+<view bindtap="showModel">
+<image class="AddDynamic" src="/img/add.png"  > 我是测试</image>
+</view>

@@ -1,0 +1,195 @@
+.clear {
+    clear: both;
+    height: 0;
+    overflow: hidden;
+}
+
+.swiper-slide-center {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.font-white-shadow {
+    color: #fff;
+    text-shadow: 1px 1px 1px #999;
+}
+
+.img-circle {
+    border-radius: 50%;
+}
+
+@-webkit-keyframes larger {
+    0% {
+        transform: scale(0,0);
+    }
+
+    100% {
+        transform: scale(1,1);
+    }
+}
+
+@keyframes larger {
+    0% {
+        transform: scale(0,0);
+    }
+
+    100% {
+        transform: scale(1,1);
+    }
+}
+
+.comm-layer1 {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.7);
+    display: none;
+}
+
+.comm-layer1 .layer-view {
+    position: fixed;
+    z-index: 101;
+    top: 100px;
+    left: 30px;
+    right: 30px;
+    background-color: #fff;
+    border-radius: 4px;
+    display: none;
+    overflow: hidden;
+}
+
+.comm-layer1.show {
+    display: block;
+}
+
+.comm-layer1.show .layer-view {
+    display: block;
+    animation: larger .3s;
+}
+
+.comm-text1 {
+    font-size: 14px;
+    line-height: 20px;
+    color: #999;
+    text-align: center;
+}
+
+.comm-split1 {
+    height: 5px;
+    background-color: #eee;
+    margin: 20px 0 0 0;
+}
+
+.comm-btn1 {
+    height: 80rpx;
+    font-size: 30rpx;
+    line-height: 80rpx;
+    background-color: #FF1F5D;
+    color: #fff;
+    border-radius: 46rpx;
+    border: 0;
+    text-align: center;
+}
+
+.comm-btn2 {
+    height: 80rpx;
+    font-size: 30rpx;
+    line-height: 80rpx;
+    background-color: #FF1F5D;
+    color: #fff;
+    border-radius: 46rpx;
+    border: 0;
+    text-align: center;
+}
+
+.comm-guidetips {
+    position: fixed;
+    z-index: 100;
+    display: none;
+}
+
+.comm-guidetips .layer-guide {
+    position: fixed;
+    z-index: 101;
+    display: none;
+}
+
+.comm-guidetips .layer-guide image {
+    width: 100%;
+    display: block;
+}
+
+.comm-guidetips .layer-guide.tip1 {
+    right: 35px;
+    width: 231px;
+}
+
+.comm-guidetips .layer-guide.tip2 {
+    left: 2rpx;
+    bottom: 94rpx;
+    width: 416rpx;
+}
+
+.comm-guidetips .layer-guide.tip3 {
+    right: 2rpx;
+    bottom: 94rpx;
+    width: 458rpx;
+}
+
+.comm-guidetips .layer-guide.tip4 {
+    right: 12rpx;
+    width: 505rpx;
+}
+
+.comm-guidetips .layer-guide.tip5 {
+    right: 141rpx;
+    width: 454rpx;
+}
+
+.comm-guidetips .layer-guide.tip6 {
+    left: 50%;
+    margin-left: -108px;
+    width: 217px;
+}
+
+.comm-guidetips .layer-guide.tip7 {
+    right: 28rpx;
+    width: 480rpx;
+}
+
+.comm-guidetips .layer-guide.tip8 {
+    right: 28rpx;
+    width: 490rpx;
+}
+
+.comm-guidetips .layer-guide.tip9 {
+    right: 98rpx;
+    bottom: 86rpx;
+    width: 416rpx;
+}
+
+.comm-guidetips .layer-guide.tip10 {
+    right: 53rpx;
+    bottom: 95rpx;
+    width: 326rpx;
+}
+
+.comm-guidetips.show {
+    display: block;
+}
+
+.comm-guidetips.show .layer-guide {
+    display: block;
+    animation: larger .3s;
+}

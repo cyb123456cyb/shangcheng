@@ -1,0 +1,84 @@
+<cu-custom bgColor="bg-orange" isBack="{{true}}">
+<!-- <view class="cu-custom" style="height:{{CustomBar}}px;"> -->
+    <!-- <view class="cu-bar fixed none-bg text-white bg-img" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+        <view class="head-title canui-head-title">商品详情</view>
+    </view> -->
+    <view slot="content">课程分类</view>
+<!-- </view> -->
+
+</cu-custom>
+    <form bindsubmit="Submit" style="width:'100%'">
+<view class="cu-bar search bg-white">
+
+    <view class="cu-avatar round" style="background-image:url(https://image.weilanwl.com/img/square-2.jpg);"></view>
+    <view class="search-form round">
+      <text class="cuIcon-search"></text>
+      <input type="text" placeholder="搜索精品课程" confirm-type="search" name="searchTitle"></input>
+    </view>
+    
+    <view class="action">
+       <button class="cu-btn bg-blue shadow-blur round" form-type="submit">搜索</button>
+    </view>
+
+  </view>
+      </form>
+      
+<view class="VerticalBox">
+  <scroll-view class="VerticalNav nav" scroll-y scroll-with-animation scroll-top="{{VerticalNavTop}}" style="height:calc(100vh - 375rpx)">
+    <view class="cu-item {{index==TabCur?'text-green cur':''}}" wx:for="{{Category}}" wx:key bindtap='tabSelect' data-id="{{index}}" >
+      {{item}}
+    </view>
+  </scroll-view>
+  <scroll-view class="VerticalMain" scroll-y scroll-with-animation style="height:calc(100vh - 375rpx)" scroll-into-view="main-{{MainCur}}" bindscroll="VerticalMain">
+    <view class="padding-top padding-lr" wx:for="{{Goods.length}}" wx:key id="main-{{index}}">
+       <view class='cu-bar solid-bottom bg-white'>{{Category[index]}}
+          </view>
+        <view wx:for ="{{Goods[index]}}">
+          <navigator url="../goods/details?id={{item.course_id}}">
+        <view class="cu-list menu-avatar">
+      <view class="cu-item">
+          <view class="cu-avatar round lg" style="background-image:url({{item.course_pic1}});"></view>
+          <view class="content">
+            <view class="text-grey">{{item.course_title}}</view>
+            <view class="text-gray text-sm flex">
+              <text class="text-cut">
+										<text class="cuIcon-infofill text-red  margin-right-xs">{{item.course_synopsis}}</text>
+              </text>
+            </view>
+          </view>
+          <view class="action">
+            <view class="text-grey text-xs">{{item.course_price}}</view>
+            <view class="cu-tag round bg-grey sm">5</view>
+          </view>
+        </view>
+      </view>
+   </navigator>
+</view>
+    </view>
+   <!--    <view class='cu-bar solid-bottom bg-white'>
+        <view class='action'>
+          <text class='cuIcon-title text-green'></text> Tab-{{item.name}} </view>
+      </view>
+      <view class="cu-list menu-avatar">
+        <view class="cu-item">
+          <view class="cu-avatar round lg" style="background-image:url(/img/dynamic_t.png);"></view>
+          <view class="content">
+            <view class="text-grey">测试</view>
+            <view class="text-gray text-sm flex">
+              <text class="text-cut">
+										<text class="cuIcon-infofill text-red  margin-right-xs"></text> 我是测试我是测试
+              </text>
+            </view>
+          </view>
+          <view class="action">
+            <view class="text-grey text-xs">22:20</view>
+            <view class="cu-tag round bg-grey sm">5</view>
+          </view>
+        </view>
+
+
+      </view>
+
+    </view> -->
+  </scroll-view>
+</view>

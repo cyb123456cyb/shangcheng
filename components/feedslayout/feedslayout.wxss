@@ -1,0 +1,553 @@
+.clear {
+    clear: both;
+    height: 0;
+    overflow: hidden;
+}
+
+.swiper-slide-center {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.font-white-shadow {
+    color: #fff;
+    text-shadow: 1px 1px 1px #999;
+}
+
+.img-circle {
+    border-radius: 50%;
+}
+
+@-webkit-keyframes larger {
+    0% {
+        transform: scale(0,0);
+    }
+
+    100% {
+        transform: scale(1,1);
+    }
+}
+
+@keyframes larger {
+    0% {
+        transform: scale(0,0);
+    }
+
+    100% {
+        transform: scale(1,1);
+    }
+}
+
+.comm-layer1 {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.7);
+    display: none;
+}
+
+.comm-layer1 .layer-view {
+    position: fixed;
+    z-index: 101;
+    top: 100px;
+    left: 30px;
+    right: 30px;
+    background-color: #fff;
+    border-radius: 4px;
+    display: none;
+    overflow: hidden;
+}
+
+.comm-layer1.show {
+    display: block;
+}
+
+.comm-layer1.show .layer-view {
+    display: block;
+    animation: larger .3s;
+}
+
+.comm-text1 {
+    font-size: 14px;
+    line-height: 20px;
+    color: #999;
+    text-align: center;
+}
+
+.comm-split1 {
+    height: 5px;
+    background-color: #eee;
+    margin: 20px 0 0 0;
+}
+
+.comm-btn1 {
+    height: 80rpx;
+    font-size: 30rpx;
+    line-height: 80rpx;
+    background-color: #FF1F5D;
+    color: #fff;
+    border-radius: 46rpx;
+    border: 0;
+    text-align: center;
+}
+
+.comm-btn2 {
+    height: 80rpx;
+    font-size: 30rpx;
+    line-height: 80rpx;
+    background-color: #FF1F5D;
+    color: #fff;
+    border-radius: 46rpx;
+    border: 0;
+    text-align: center;
+}
+
+.feedscontainer {
+    padding: 0 20rpx;
+}
+
+.feedscontainer .feeds-l {
+    margin: 0 20rpx 0 0;
+}
+
+.feedscontainer .feeds-l,.feedscontainer .feeds-r {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.comm-feeds {
+    margin: 0 20rpx;
+    column-count: 2;
+    column-gap: 0;
+}
+
+.comm-feeds .feeds-item {
+    -webkit-column-break-inside: avoid;
+    break-inside: avoid;
+    display: inline-block;
+}
+
+.feeds-item {
+    box-sizing: border-box;
+    background: #ffffff;
+    box-shadow: 0px 2px 12px 0px rgba(0,0,0,0.15);
+    margin: 0 0 20rpx 0;
+    border-radius: 12rpx;
+    overflow: hidden;
+}
+
+.feeds-item.ftype-note {
+    position: relative;
+}
+
+.feeds-item.ftype-note .toppic {
+    position: relative;
+    height: auto;
+    overflow: hidden;
+}
+
+.feeds-item.ftype-note .toppic .feedpic {
+    display: block;
+}
+
+.feeds-item.ftype-note .toppic .icon-hot {
+    position: absolute;
+    top: 0;
+    left: 25rpx;
+    width: 36rpx;
+    height: 41rpx;
+    background: url("http://m.jiazhangbiji.cn/images/wxapp/topicnote-hot.png?v=1") 0 0 no-repeat;
+    background-size: 36rpx auto;
+}
+
+.feeds-item.ftype-note .toppic .icon-video {
+    position: absolute;
+    top: 20rpx;
+    right: 20rpx;
+    width: 36rpx;
+    height: 36rpx;
+    background: url("http://m.jiazhangbiji.cn/images/wxapp/video-play.png") 0 0 no-repeat;
+    background-size: 36rpx 36rpx;
+}
+
+.feeds-item.ftype-note .feedinfo {
+    background-color: #fff;
+    padding: 0 0 20rpx 0;
+    position: relative;
+}
+
+.feeds-item.ftype-note .feedinfo .ftopic {
+    padding: 28rpx 0 0 24rpx;
+    height: 15rpx;
+}
+
+.feeds-item.ftype-note .feedinfo .ftopic .fttitle {
+    display: inline-block;
+    vertical-align: top;
+    height: 15rpx;
+    font-size: 22rpx;
+    line-height: 15rpx;
+    color: #000;
+    padding: 0 6rpx 0 28rpx;
+    background: url("http://m.jiazhangbiji.cn/images/wxapp/topic-icon.png") 6rpx 0 no-repeat;
+    background-size: 17rpx auto;
+    background-color: #FFEF16;
+}
+
+.feeds-item.ftype-note .feedinfo .fcontent {
+    padding: 23rpx 24rpx 10rpx 24rpx;
+    font-size: 26rpx;
+    line-height: 37rpx;
+}
+
+.feeds-item.ftype-note .feedinfo .fcontent .ftsigndays {
+    display: inline-block;
+    vertical-align: top;
+    height: 37rpx;
+    padding: 0 7rpx;
+    font-size: 26rpx;
+    line-height: 37rpx;
+    color: #FF1F5D;
+    background-color: #FFD9E3;
+    border-radius: 2rpx;
+}
+
+.feeds-item.ftype-note .feedinfo .fuser {
+    margin: 20rpx 0 0 24rpx;
+    position: relative;
+}
+
+.feeds-item.ftype-note .feedinfo .fuser .fface {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.feeds-item.ftype-note .feedinfo .fuser .fface .uface-box {
+    width: 40rpx;
+    height: 40rpx;
+    position: relative;
+}
+
+.feeds-item.ftype-note .feedinfo .fuser .fface .uface-box .facepic {
+    border-radius: 50%;
+    width: 40rpx;
+    height: 40rpx;
+    background-color: #999;
+    display: block;
+}
+
+.feeds-item.ftype-note .feedinfo .fuser .fface .uface-box .utype {
+    position: absolute;
+    bottom: -1rpx;
+    right: -1rpx;
+    width: 20rpx;
+    height: 20rpx;
+}
+
+.feeds-item.ftype-note .feedinfo .fuser .fface .uface-box .utype.utype-2 {
+    background: url("http://m.jiazhangbiji.cn/images/wxapp/daren-s@3x.png") 0 0 no-repeat;
+    background-size: auto 20rpx;
+}
+
+.feeds-item.ftype-note .feedinfo .fuser .fface .uface-box .utype.utype-3 {
+    background: url("http://m.jiazhangbiji.cn/images/wxapp/xingma-s@3x.png") 0 0 no-repeat;
+    background-size: auto 20rpx;
+}
+
+.feeds-item.ftype-note .feedinfo .fuser .fnick {
+    margin: 0 0 0 50rpx;
+    height: 40rpx;
+    font-size: 26rpx;
+    line-height: 40rpx;
+    color: #403866;
+    overflow: hidden;
+}
+
+.feeds-item.ftype-note .feedinfo .flike {
+    position: absolute;
+    bottom: 25rpx;
+    right: 24rpx;
+    height: 30rpx;
+}
+
+.feeds-item.ftype-note .feedinfo .flike .icon-like {
+    display: inline-block;
+    width: 30rpx;
+    height: 30rpx;
+    vertical-align: top;
+    background: url("http://m.jiazhangbiji.cn/images/wxapp/icon-like.png") 0 2rpx no-repeat;
+    background-size: 30rpx 26rpx;
+}
+
+.feeds-item.ftype-note .feedinfo .flike .icon-like.liked {
+    background: url("http://m.jiazhangbiji.cn/images/wxapp/icon-liked.png") 0 2rpx no-repeat;
+    background-size: 30rpx 26rpx;
+}
+
+.feeds-item.ftype-note .feedinfo .flike .likecount {
+    margin: 0 0 0 8rpx;
+    display: inline-block;
+    vertical-align: top;
+    width: 30rpx;
+    height: 30rpx;
+    font-size: 22rpx;
+    line-height: 30rpx;
+    color: #808080;
+}
+
+.feeds-item.ftype-note .tsuserbg {
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    display: none;
+}
+
+.feeds-item.ftype-note .tsuserbg .tsactions {
+    position: absolute;
+    top: 50%;
+    left: 42rpx;
+    right: 42rpx;
+    margin-top: -100rpx;
+}
+
+.feeds-item.ftype-note .tsuserbg .tsactions .btnact {
+    margin: 60rpx 0 0 0;
+    height: 70rpx;
+    font-size: 28rpx;
+    line-height: 70rpx;
+    border-radius: 45rpx;
+    color: #444444;
+    text-align: right;
+    padding: 0 46rpx 0 0;
+}
+
+.feeds-item.ftype-note .tsuserbg .tsactions .btnact:first-child {
+    margin-top: 0;
+}
+
+.feeds-item.ftype-note .tsuserbg .tsactions .btnact.btnaddhot {
+    background: url("http://m.jiazhangbiji.cn/images/wxapp/suact-hot1.png") 44rpx 14rpx no-repeat;
+    background-size: auto 41rpx;
+    background-color: #fff;
+}
+
+.feeds-item.ftype-note .tsuserbg .tsactions .btnact.btncancelhot {
+    background: url("http://m.jiazhangbiji.cn/images/wxapp/suact-hot2.png") 44rpx 14rpx no-repeat;
+    background-size: auto 41rpx;
+    background-color: #fff;
+}
+
+.feeds-item.ftype-note .tsuserbg .tsactions .btnact.btnhidenote {
+    background: url("http://m.jiazhangbiji.cn/images/wxapp/suact-hide.png") 44rpx 14rpx no-repeat;
+    background-size: 40rpx 40rpx;
+    background-color: #fff;
+}
+
+.feeds-item.ftype-note .tsuserbg.show {
+    display: block;
+}
+
+.feeds-item.ftype-note .tsuserbg.show .tsactions {
+    display: block;
+    animation: larger .3s;
+}
+
+.feeds-item.ftype-ad .adpic {
+    display: block;
+}
+
+.feeds-item.ftype-topic .title1 {
+    padding: 40rpx 0 0 20rpx;
+    height: 18rpx;
+}
+
+.feeds-item.ftype-topic .title1 .ttitleline {
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 11rpx 0 40rpx;
+    height: 18rpx;
+    font-size: 26rpx;
+    line-height: 18rpx;
+    color: #000;
+    font-weight: 600;
+    background: url("http://m.jiazhangbiji.cn/images/wxapp/topic-icon.png") 11rpx 0 no-repeat;
+    background-size: auto 20rpx;
+    background-color: #FFEF16;
+}
+
+.feeds-item.ftype-topic .tnotes {
+    margin: 25rpx 0 0 0;
+    padding: 0 20rpx 20rpx 20rpx;
+}
+
+.feeds-item.ftype-topic .tnotes .titem {
+    padding: 30rpx 0 30rpx 0;
+    border-bottom: 1rpx solid #ccc;
+    position: relative;
+}
+
+.feeds-item.ftype-topic .tnotes .titem:last-child {
+    border-bottom: 0;
+}
+
+.feeds-item.ftype-topic .tnotes .titem .npic {
+    position: absolute;
+    width: 70rpx;
+    height: 70rpx;
+}
+
+.feeds-item.ftype-topic .tnotes .titem .npic image {
+    width: 70rpx;
+    height: 70rpx;
+    display: block;
+    border-radius: 6rpx;
+}
+
+.feeds-item.ftype-topic .tnotes .titem .ncontent {
+    margin: 0 0 0 87rpx;
+    height: 70rpx;
+    font-size: 26rpx;
+    line-height: 35rpx;
+    overflow: hidden;
+}
+
+.feeds-item.ftype-users .title1 {
+    padding: 40rpx 0 0 0;
+    text-align: center;
+    height: 18rpx;
+}
+
+.feeds-item.ftype-users .title1 .text1 {
+    display: inline-block;
+    vertical-align: top;
+    color: #FF1F5D;
+    font-size: 26rpx;
+    line-height: 18rpx;
+}
+
+.feeds-item.ftype-users .title1 .text2 {
+    display: inline-block;
+    vertical-align: top;
+    background-color: #FFBAD0;
+    color: #000;
+    height: 18rpx;
+    font-size: 26rpx;
+    line-height: 18rpx;
+    font-weight: 600;
+    padding: 0 10rpx;
+    margin: 0 20rpx;
+}
+
+.feeds-item.ftype-users .recmdusers {
+    padding: 40rpx 10rpx;
+}
+
+.feeds-item.ftype-users .recmdusers .uitem {
+    background-color: #FFF3F6;
+    position: relative;
+    margin: 0 0 20rpx 0;
+    height: 90rpx;
+    border-radius: 6rpx;
+    overflow: hidden;
+}
+
+.feeds-item.ftype-users .recmdusers .uitem:last-child {
+    margin-bottom: 0;
+}
+
+.feeds-item.ftype-users .recmdusers .uitem .uface {
+    position: absolute;
+    top: 10rpx;
+    left: 10rpx;
+    width: 70rpx;
+    height: 70rpx;
+}
+
+.feeds-item.ftype-users .recmdusers .uitem .uface image {
+    width: 70rpx;
+    height: 70rpx;
+    display: block;
+    border-radius: 50%;
+}
+
+.feeds-item.ftype-users .recmdusers .uitem .unick {
+    margin: 0 0 0 100rpx;
+    padding: 10rpx 0 0 0;
+    font-size: 26rpx;
+    line-height: 30rpx;
+    color: #000;
+}
+
+.feeds-item.ftype-users .recmdusers .uitem .ubio {
+    margin: 11rpx 0 0 100rpx;
+    font-size: 22rpx;
+    line-height: 30rpx;
+    color: #6A6A73;
+    height: 30rpx;
+    overflow: hidden;
+}
+
+.feeds-item.ftype-sbj {
+    background: url("http://m.jiazhangbiji.cn/images/wxapp/recmd-sbj-bg.png") 0 0 no-repeat;
+    background-size: 100% auto;
+}
+
+.feeds-item.ftype-sbj .title1 {
+    padding: 30rpx 20rpx;
+    font-size: 34rpx;
+    line-height: 48rpx;
+    font-weight: 600;
+}
+
+.feeds-item.ftype-sbj .fcount {
+    margin: 12rpx 0 0 20rpx;
+}
+
+.feeds-item.ftype-sbj .fcount .fcounttext {
+    display: inline-block;
+    vertical-align: top;
+    height: 30rpx;
+    font-size: 22rpx;
+    line-height: 30rpx;
+    background-color: #1726FF;
+    color: #fff;
+    border-radius: 15rpx;
+    padding: 0 12rpx;
+}
+
+.feeds-item.ftype-sbj .pics {
+    display: block;
+    margin: 20rpx 0 20rpx 20rpx;
+}
+
+.feeds-item.ftype-sbj .pics .pic {
+    float: left;
+    width: 148rpx;
+    height: 148rpx;
+    overflow: hidden;
+    margin: 0 10rpx 10rpx 0;
+}
+
+.feeds-item.ftype-sbj .pics .pic image {
+    width: 148rpx;
+    height: 148rpx;
+    display: block;
+}

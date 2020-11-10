@@ -1,0 +1,6 @@
+{
+  "usingComponents":{
+    "Test":"/components/dynamics/dynamics",
+    "AddVI":"/components/notetypesel/notetypesel"
+  }
+}

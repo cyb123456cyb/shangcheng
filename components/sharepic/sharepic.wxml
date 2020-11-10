@@ -1,0 +1,11 @@
+<view bindtap="hidePic" class="comm-sharepic {{show_pic?'show':''}}">
+    <view class="layer-pic">
+        <view class="picbox">
+            <image bindload="onPicLoaded" mode="widthFix" src="{{pic_url}}"></image>
+        </view>
+        <view class="tips1">{{pic_tips}}</view>
+        <view class="picactions">
+            <button plain catchtap="downloadPic" class="btn-download">保存到手机相册</button>
+        </view>
+    </view>
+</view>

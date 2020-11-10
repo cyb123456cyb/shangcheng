@@ -1,0 +1,61 @@
+<cu-custom bgColor="bg-orange" isBack="{{true}}">
+
+<view slot="backText">返回</view>
+
+    <view slot="content">个人信息修改</view>
+<!-- </view> -->
+
+</cu-custom>
+
+<form bindsubmit="formSubmit">
+	<view class="cu-form-group margin-top">
+		<view class="title">姓名</view>
+		<input placeholder="{{name}}" bindinput='watchName'></input>
+	</view>
+
+  	<view class="cu-form-group ">
+		<view class="title">院校</view>
+		<input placeholder="{{city}}" bindinput='watchCity'></input>
+	</view>
+
+	<view class="cu-form-group ">
+		<view class="title">专业</view>
+		<input placeholder="{{profess}}" bindinput='watchProfess'></input>
+	</view>
+
+	<view class="cu-form-group"><view class="title">毕业年月</view>
+		<picker mode="date" value="{{date}}" start="1900-09-01" end="2020-09-01" bindchange="DateChange">
+			<view class="picker">
+				{{date}}
+			</view>
+		</picker>
+	</view>
+
+
+	<view class="cu-form-group">
+		<view class="title">性别</view>
+		<picker bindchange="PickerChange" value="{{index}}" range="{{picker}}">
+			<view class="picker">
+				{{index?picker[index]:'请选择性别'}}
+			</view>
+		</picker>
+	</view>
+
+
+
+	<view class="cu-form-group">
+		<view class="title">手机号码</view>
+		<input placeholder="输入框带标签" bindinput="watchPhoneNum"></input>
+		<view class="cu-capsule radius">
+			<view class="cu-tag bg-blue">
+				+86
+			</view>
+			<view class="cu-tag line-blue">
+				中国大陆
+			</view>
+		</view>
+	</view>
+	
+
+  <button form-type="submit">提交</button>
+</form>

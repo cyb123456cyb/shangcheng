@@ -1,0 +1,199 @@
+.clear {
+    clear: both;
+    height: 0;
+    overflow: hidden;
+}
+
+.swiper-slide-center {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.font-white-shadow {
+    color: #fff;
+    text-shadow: 1px 1px 1px #999;
+}
+
+.img-circle {
+    border-radius: 50%;
+}
+
+@-webkit-keyframes larger {
+    0% {
+        transform: scale(0,0);
+    }
+
+    100% {
+        transform: scale(1,1);
+    }
+}
+
+@keyframes larger {
+    0% {
+        transform: scale(0,0);
+    }
+
+    100% {
+        transform: scale(1,1);
+    }
+}
+
+.comm-layer1 {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.7);
+    display: none;
+}
+
+.comm-layer1 .layer-view {
+    position: fixed;
+    z-index: 101;
+    top: 100px;
+    left: 30px;
+    right: 30px;
+    background-color: #fff;
+    border-radius: 4px;
+    display: none;
+    overflow: hidden;
+}
+
+.comm-layer1.show {
+    display: block;
+}
+
+.comm-layer1.show .layer-view {
+    display: block;
+    animation: larger .3s;
+}
+
+.comm-text1 {
+    font-size: 14px;
+    line-height: 20px;
+    color: #999;
+    text-align: center;
+}
+
+.comm-split1 {
+    height: 5px;
+    background-color: #eee;
+    margin: 20px 0 0 0;
+}
+
+.comm-btn1 {
+    height: 80rpx;
+    font-size: 30rpx;
+    line-height: 80rpx;
+    background-color: #FF1F5D;
+    color: #fff;
+    border-radius: 46rpx;
+    border: 0;
+    text-align: center;
+}
+
+.comm-btn2 {
+    height: 80rpx;
+    font-size: 30rpx;
+    line-height: 80rpx;
+    background-color: #FF1F5D;
+    color: #fff;
+    border-radius: 46rpx;
+    border: 0;
+    text-align: center;
+}
+
+.comm-notetypesel {
+    position: fixed;
+    z-index: 200;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.7);
+    display: none;
+}
+
+.comm-notetypesel .layer-sel {
+    position: fixed;
+    z-index: 201;
+    top: 300rpx;
+    left: 50%;
+    margin-left: -280rpx;
+    width: 560rpx;
+    background-color: #fff;
+    border-radius: 24rpx;
+    box-shadow: 0px 2px 24px 0px rgba(0,0,0,0.2);
+    display: none;
+}
+
+.comm-notetypesel .layer-sel .typesel {
+    padding: 0 40rpx;
+}
+
+.comm-notetypesel .layer-sel .typesel .item {
+    height: 160rpx;
+    border-bottom: 1rpx solid #E5E5E5;
+    position: relative;
+    text-align: left;
+    border: 0;
+    padding: 0;
+}
+
+.comm-notetypesel .layer-sel .typesel .item .iicon {
+    position: absolute;
+    top: 54rpx;
+    left: 64rpx;
+    width: 91rpx;
+    height: 53rpx;
+}
+
+.comm-notetypesel .layer-sel .typesel .item .iname {
+    padding: 36rpx 0 0 225rpx;
+    font-size: 32rpx;
+    line-height: 45rpx;
+}
+
+.comm-notetypesel .layer-sel .typesel .item .itips {
+    padding: 10rpx 0 0 225rpx;
+    font-size: 24rpx;
+    line-height: 33rpx;
+    color: #666;
+}
+
+.comm-notetypesel .layer-sel .typesel .item.photo .iicon {
+    background: url("http://m.jiazhangbiji.cn/images/wxapp/photo@3x.png") 0 0 no-repeat;
+    background-size: 91rpx 53rpx;
+}
+
+.comm-notetypesel .layer-sel .typesel .item.video .iicon {
+    background: url("http://m.jiazhangbiji.cn/images/wxapp/video@3x.png") 0 0 no-repeat;
+    background-size: 91rpx 53rpx;
+}
+
+.comm-notetypesel .layer-sel .btncancel {
+    height: 120rpx;
+    font-size: 32rpx;
+    line-height: 120rpx;
+    color: #ccc;
+    text-align: center;
+}
+
+.comm-notetypesel.show {
+    display: block;
+}
+
+.comm-notetypesel.show .layer-sel {
+    display: block;
+    animation: larger .3s;
+}

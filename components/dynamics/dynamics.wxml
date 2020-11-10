@@ -1,0 +1,18 @@
+
+<view class='Outter'  style="width:100%">
+  <image bindtap="NavigateTo" wx:if="{{imgPath}}" src=' {{imgPath}}' style="width:100%;height:{{Height}}px" ></image>
+  <view class="text"  style="text-align:center">{{title}}</view>
+  <view class="imgANameALoves">
+  <view class="Images"></view>
+  <image class="InnerImage" src="{{Image}}"></image>
+    <!-- <image class="InnerImage" src="/images/lys.png"></image> -->
+    <view class="textName" >
+    <text   style="text-align:center">{{Name}}</text>
+    </view>
+    <view class="Likes">
+    <image  class="Images" src="/img/Ly.png"></image>
+  <!-- 展示动态主的照片和姓名和点赞数量 -->
+    <text style="color:gray"></text>
+  </view>
+  </view>
+</view>

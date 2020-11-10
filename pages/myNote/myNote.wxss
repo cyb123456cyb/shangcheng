@@ -1,0 +1,15 @@
+/* 单个图片容器的样式 */
+.img_item {
+width: 44%;
+margin: 1%;
+display: inline-block;
+vertical-align: top;
+}
+.AddDynamic{
+  position: fixed;
+  left:85%;
+  top: 90%;
+  z-index: 1;
+  width: 100rpx;
+  height:100rpx;
+}

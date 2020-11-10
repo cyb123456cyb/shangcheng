@@ -1,0 +1,17 @@
+<view>
+    <view class="comm-topbar">
+        <view class="comm-topsysbar {{bgempty?'bgempty':''}}" style="height:{{status_bar_height}}px;"></view>
+        <view class="comm-topnavbar">
+            <view class="topnavbar {{bottom_border?'bottom-border':''}} {{common?'common':''}} {{bgempty?'bgempty':''}}">
+                <view class="title">{{title}}</view>
+                <form reportSubmit bindsubmit="submitGotoBack" wx:if="{{back}}">
+                    <button plain class="back" formType="submit" wx:if="{{back}}"></button>
+                </form>
+                <form reportSubmit bindsubmit="submitGotoHome" wx:if="{{home}}">
+                    <button plain class="home" formType="submit" wx:if="{{home}}"></button>
+                </form>
+            </view>
+        </view>
+    </view>
+    <view class="comm-topbar-placeholder" style="height:{{status_bar_height+44}}px;"></view>
+</view>
