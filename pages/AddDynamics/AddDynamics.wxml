@@ -31,55 +31,10 @@
 </view>
 
 
-  <!-- <view class='content'>
-    <view class='left'>
-      内容
-    </view>
-    <view class='right' >
-      <text bindtap='label' class="{{status[index]==1? 'labelColor':''}}" data-index="{{index}} "wx:for="{{additional}}" id="{{index}}">{{item}}</text>
-
-    </view>
-  </view> -->
-
             <view class="formsubmit" >
                 <button class="btn-submit" disabled="{{form_submit_loading}}" formType="submit" hoverClass="loading" load="{{form_submit_loading}}" wx:if="{{!note_create_succ}}">
                     {{form_submit_loading?'正在提交，请稍候...':'确认发布'}}
                 </button>
             </view> 
-            </form>
-
-
-
-             <view class="notetitle">
-             
-            </view>
-            <view class="notepiccontent" wx:if="{{note_type=='1'}}">
-                <view class="picadd">
-                    <view bindtap="ChooseImage" class="btnadd" data-index="0">添加图文</view>
-                </view>
-                <view class="item" wx:for="{{imgList}}">
-                    <view class="pictext">
-                        <view class="notepic">
-                            <image mode="widthFix" src="{{item}}"></image>
-                            <view class="noteactions">
-                                <view bindtap="bindRemovePhoto" class="pic-btn pic-del" data-index="{{index}}"></view>
-                                <view bindtap="bindPhotoChange" class="pic-btn pic-replace" data-index="{{index}}"></view>
-                            </view>
-                        </view>
-                        <view class="notetext">
-                            <textarea autoHeight bindinput="onPicContentInput" data-index="{{index}}" maxlength="5000" placeholder="有图有真相，有字有细节！多写点哦…" placeholderClass="hover" value="{{pic_contents[index]?pic_contents[index]:''}}"></textarea>
-                            <view class="tips">5000字</view>
-                        </view>
-                    </view>
-                    <view class="picadd">
-                        <view bindtap="ChooseImage" class="btnadd" data-index="{{index+1}}">
-                            添加图文
-                        </view>
-                    </view>
-                </view>
-            </view>
-
-
-
-
+ 
 </view>
